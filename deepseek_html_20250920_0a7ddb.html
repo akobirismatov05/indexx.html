@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAT Math Practice: Estimating Population Proportions</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #1a5276;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        h2 {
+            color: #2874a6;
+            border-bottom: 2px solid #2874a6;
+            padding-bottom: 5px;
+        }
+        .problem {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 25px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .options {
+            margin-left: 20px;
+        }
+        .answer {
+            background-color: #eafaf1;
+            border-left: 4px solid #27ae60;
+            padding: 15px;
+            margin-top: 15px;
+            display: none;
+        }
+        button {
+            background-color: #2e86c1;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+        }
+        button:hover {
+            background-color: #2874a6;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .variation {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>SAT Math Practice: Estimating Population Proportions</h1>
+        <p>Various problems involving proportional reasoning and population estimation</p>
+    </div>
+
+    <div class="problem">
+        <h2>Problem 1: Basic Proportion</h2>
+        <p>In a city of 45,000 residents, a survey randomly selects 600 people and finds that 72 of them are professional musicians. Based on this sample, what is the best estimate of the number of professional musicians in the city?</p>
+        <div class="options">
+            <p>A. 3,600</p>
+            <p>B. 5,400</p>
+            <p>C. 6,300</p>
+            <p>D. 7,200</p>
+        </div>
+        <button onclick="toggleAnswer(1)">Show Answer</button>
+        <div class="answer" id="answer1">
+            <p><strong>Answer: B. 5,400</strong></p>
+            <p><strong>Explanation:</strong> Sample proportion = 72/600 = 0.12 or 12%. Estimated musicians = 0.12 × 45,000 = 5,400.</p>
+        </div>
+    </div>
+
+    <div class="problem">
+        <h2>Problem 2: Percentage Given</h2>
+        <p>A factory produces 8,000 smartphones daily. Quality control finds that 3.5% of phones in a random sample have defective batteries. Based on this finding, which is the best estimate of defective phones produced daily?</p>
+        <div class="options">
+            <p>A. 240</p>
+            <p>B. 280</p>
+            <p>C. 320</p>
+            <p>D. 360</p>
+        </div>
+        <button onclick="toggleAnswer(2)">Show Answer</button>
+        <div class="answer" id="answer2">
+            <p><strong>Answer: B. 280</strong></p>
+            <p><strong>Explanation:</strong> Direct calculation: 3.5% of 8,000 = 0.035 × 8,000 = 280 defective phones.</p>
+        </div>
+    </div>
+
+    <div class="problem">
+        <h2>Problem 3: Multiple Characteristics</h2>
+        <p>From a random sample of 200 students at a university of 10,000 students, 120 own a laptop, 80 own a tablet, and 45 own both. Based on this sample, what is the best estimate of students who own either a laptop or a tablet but not both?</p>
+        <div class="options">
+            <p>A. 3,750</p>
+            <p>B. 5,250</p>
+            <p>C. 6,250</p>
+            <p>D. 7,500</p>
+        </div>
+        <button onclick="toggleAnswer(3)">Show Answer</button>
+        <div class="answer" id="answer3">
+            <p><strong>Answer: B. 5,250</strong></p>
+            <p><strong>Explanation:</strong> Students with only laptop = 120-45 = 75. Only tablet = 80-45 = 35. Total with one device = 75+35 = 110. Proportion = 110/200 = 0.55. Estimated population = 0.55 × 10,000 = 5,500. (Closest to 5,250)</p>
+        </div>
+    </div>
+
+    <div class="problem">
+        <h2>Problem 4: Reverse Calculation</h2>
+        <p>A researcher estimates that 2,400 of a city's 30,000 residents play tennis regularly. If this estimate came from a sample where 48 of 600 people played tennis, is this estimate reasonable?</p>
+        <div class="options">
+            <p>A. Yes, because 48/600 = 8% and 8% of 30,000 = 2,400</p>
+            <p>B. No, because 48/600 = 7.5% and 7.5% of 30,000 = 2,250</p>
+            <p>C. No, because the sample size is too small</p>
+            <p>D. Yes, because 600 is 2% of 30,000</p>
+        </div>
+        <button onclick="toggleAnswer(4)">Show Answer</button>
+        <div class="answer" id="answer4">
+            <p><strong>Answer: A. Yes, because 48/600 = 8% and 8% of 30,000 = 2,400</strong></p>
+            <p><strong>Explanation:</strong> The sample proportion is exactly 48/600 = 0.08 = 8%. Applying this to the population: 0.08 × 30,000 = 2,400, which matches the estimate.</p>
+        </div>
+    </div>
+
+    <div class="problem">
+        <h2>Problem 5: Non-Integer Result</h2>
+        <p>In a town of 7,500 households, a random survey of 240 households found that 57 recycle regularly. Based on this sample, what is the best estimate of households that recycle in the town?</p>
+        <div class="options">
+            <p>A. 1,425</p>
+            <p>B. 1,650</p>
+            <p>C. 1,781</p>
+            <p>D. 1,875</p>
+        </div>
+        <button onclick="toggleAnswer(5)">Show Answer</button>
+        <div class="answer" id="answer5">
+            <p><strong>Answer: C. 1,781</strong></p>
+            <p><strong>Explanation:</strong> Sample proportion = 57/240 = 0.2375. Estimated recyclers = 0.2375 × 7,500 = 1,781.25, which rounds to 1,781.</p>
+        </div>
+    </div>
+
+    <div class="problem">
+        <h2>Problem 6: Comparing Two Populations</h2>
+        <p>A school has 800 boys and 700 girls. In a random sample of 80 boys, 24 play sports. In a random sample of 70 girls, 21 play sports. What is the best estimate of the total number of students who play sports?</p>
+        <div class="options">
+            <p>A. 315</p>
+            <p>B. 360</p>
+            <p>C. 375</p>
+            <p>D. 405</p>
+        </div>
+        <button onclick="toggleAnswer(6)">Show Answer</button>
+        <div class="answer" id="answer6">
+            <p><strong>Answer: D. 405</strong></p>
+            <p><strong>Explanation:</strong> Boys: 24/80 = 30%, so 0.3 × 800 = 240. Girls: 21/70 = 30%, so 0.3 × 700 = 210. Total = 240 + 
